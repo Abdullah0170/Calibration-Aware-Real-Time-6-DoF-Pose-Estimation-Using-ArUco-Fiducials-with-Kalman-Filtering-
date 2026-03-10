@@ -86,10 +86,3 @@ flowchart TD
     S --> T{Press q to exit}
     T -- No --> J
     T -- Yes --> U([End])
-
-    Q --> R[Draw axis and marker]
-    R --> S[Display ID position<br/>distance orientation]
-
-    S --> T{Press q to exit?}
-    T -- No --> J
-    T -- Yes --> U([End])
