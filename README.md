@@ -57,19 +57,32 @@ Results show that **Kalman filtering significantly improves pose stability**, wh
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Load camera calibration]
+    A([Start]) --> B[Load camera calibration<br/>cameraMatrix & distCoeffs]
     B --> C[Initialize ArUco detector]
     C --> D[Open camera]
+
     D --> E[Environment calibration]
-    E --> F[Capture frame]
-    F --> G[Detect ArUco markers]
-    G --> H{Marker detected?}
-    H -- No --> F
-    H -- Yes --> I[Estimate pose using PnP]
-    I --> J[Apply Kalman Filter]
-    J --> K[Compute roll pitch yaw]
-    K --> L[Compute distance]
-    L --> M[Draw axis and display results]
-    M --> N{Press q to exit?}
-    N -- No --> F
-    N -- Yes --> O([End])
+    E --> F[Capture frames for a few seconds]
+    F --> G[Detect marker and estimate pose]
+    G --> H[Compute position noise<br/>and reference rotation]
+
+    H --> I[Start main processing loop]
+
+    I --> J[Capture frame]
+    J --> K[Detect ArUco markers]
+
+    K --> L{Marker detected?}
+    L -- No --> J
+    L -- Yes --> M[Estimate pose (PnP)]
+
+    M --> N[Apply Kalman Filter<br/>to translation vector]
+    N --> O[Compute relative rotation]
+    O --> P[Convert to roll pitch yaw]
+    P --> Q[Compute distance]
+
+    Q --> R[Draw axis and marker]
+    R --> S[Display ID position<br/>distance orientation]
+
+    S --> T{Press q to exit?}
+    T -- No --> J
+    T -- Yes --> U([End])
