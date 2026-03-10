@@ -52,3 +52,24 @@ Results show that **Kalman filtering significantly improves pose stability**, wh
 - Augmented reality tracking
 - Vision-based measurement systems
 - Autonomous navigation
+---
+## System Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[Load camera calibration]
+    B --> C[Initialize ArUco detector]
+    C --> D[Open camera]
+    D --> E[Environment calibration]
+    E --> F[Capture frame]
+    F --> G[Detect ArUco markers]
+    G --> H{Marker detected?}
+    H -- No --> F
+    H -- Yes --> I[Estimate pose using PnP]
+    I --> J[Apply Kalman Filter]
+    J --> K[Compute roll pitch yaw]
+    K --> L[Compute distance]
+    L --> M[Draw axis and display results]
+    M --> N{Press q to exit?}
+    N -- No --> F
+    N -- Yes --> O([End])
