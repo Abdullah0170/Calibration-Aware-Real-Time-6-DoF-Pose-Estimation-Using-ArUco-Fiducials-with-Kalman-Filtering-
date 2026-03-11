@@ -32,7 +32,7 @@ The system was tested at different distances and angles to evaluate pose estimat
 - 75 cm
 - 100 cm
 - 150 cm
----
+
 **Test angles**
 - 0°
 - 30°
