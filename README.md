@@ -27,6 +27,7 @@ The system workflow:
 ---
 ## Experimental Setup
 The system was tested at different distances and angles to evaluate pose estimation accuracy.
+
 **Test distances**
 - 56.5 cm
 - 75 cm
