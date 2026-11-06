@@ -1,4 +1,4 @@
-#paper DOI : - https://doi.org/10.1109/CSPA68262.2026.11517899
+# paper DOI : - https://doi.org/10.1109/CSPA68262.2026.11517899
 
 # Calibration-Aware Real-Time 6-DoF Pose Estimation Using ArUco Fiducials with Kalman Filtering Enhancement
 
