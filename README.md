@@ -1,3 +1,5 @@
+#paper DOI : - https://doi.org/10.1109/CSPA68262.2026.11517899
+
 # Calibration-Aware Real-Time 6-DoF Pose Estimation Using ArUco Fiducials with Kalman Filtering Enhancement
 
 This project implements a **real-time 6-DoF pose estimation system** using **ArUco fiducial markers and a monocular camera**. The system integrates **camera calibration, distortion correction, and Kalman filtering** to improve measurement stability and reduce noise in pose estimation.
